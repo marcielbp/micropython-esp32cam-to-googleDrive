@@ -27,14 +27,14 @@ try:
     sta_if.disconnect()
 except:
     pass
-redes = sta_if.scan()
+localNetworks = sta_if.scan()
 
 knownSsid = [b'put',b'your',b'known',b'essid-here']
 knownPasswd = [b'put',b'known-essid',b'passwords',b'here']
 
 ssidmode = False
 for i in range (0,len(knownSsid)):
-    for j in range (0,len(redes)):
+    for j in range (0,len(localNetworks)):
         print("Compare {} with {}".format(knownSsid[i],redes[j][0]))
         if (knownSsid[i]==redes[j][0]):
             print("Connecting to {}".format(knownSsid[i]))
